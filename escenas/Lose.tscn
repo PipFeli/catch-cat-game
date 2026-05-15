@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://x1b5votfy7de"]
+
+[ext_resource type="Script" uid="uid://b3pybw18c4bgy" path="res://scripts/lose.gd" id="1_tybco"]
+[ext_resource type="AudioStream" uid="uid://b156hhpj4b63b" path="res://musica/lose_cat.ogg" id="2_s5tly"]
+[ext_resource type="Texture2D" uid="uid://jiddn1q2li5o" path="res://imagenes/Interfaz/game/gameover.png" id="2_wjj2x"]
+[ext_resource type="Script" uid="uid://d0cwm6hghfjl1" path="res://scripts/Close.gd" id="3_s5tly"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tybco"]
+font_size = 36
+
+[node name="Lose" type="Control" unique_id=435616885]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tybco")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=812882443]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_wjj2x")
+
+[node name="Button" type="Button" parent="." unique_id=120955322]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 146.0
+offset_right = 152.0
+offset_bottom = 177.0
+text = "Regresar al Menú"
+
+[node name="Label" type="Label" parent="." unique_id=1820141527]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 68.0
+offset_right = 97.0
+offset_bottom = 91.0
+text = "Puntaje: 20"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=420834929]
+stream = ExtResource("2_s5tly")
+
+[node name="Label2" type="Label" parent="." unique_id=2119669600]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 91.0
+offset_right = 186.0
+offset_bottom = 114.0
+text = "Puntaje Más Alto: 4000"
+
+[node name="Label3" type="Label" parent="." unique_id=130834446]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 248.0
+offset_bottom = 60.0
+text = "HAS PERDIDO"
+label_settings = SubResource("LabelSettings_tybco")
+
+[node name="Button2" type="Button" parent="." unique_id=1002380673]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 183.0
+offset_right = 133.0
+offset_bottom = 214.0
+text = "Cerrar el Juego"
+script = ExtResource("3_s5tly")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="tree_entered" from="Label" to="." method="_on_label_tree_entered"]
+[connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]

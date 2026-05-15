@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bks2ipi8uhvfr"]
+
+[ext_resource type="Script" uid="uid://ch2e2uukg6wjn" path="res://scripts/HUD.gd" id="1_e3vx7"]
+[ext_resource type="Texture2D" uid="uid://1kcbqactc5xb" path="res://imagenes/Interfaz/game/ScoreBox.png" id="2_7bqrl"]
+[ext_resource type="Texture2D" uid="uid://cnlk57a2ovr81" path="res://imagenes/Interfaz/game/LifeBox.png" id="3_2ep1a"]
+[ext_resource type="LabelSettings" uid="uid://c3a6t6lmlwlhg" path="res://FontSettings/new_label_settings.tres" id="3_7bqrl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2ep1a"]
+font_size = 26
+font_color = Color(1, 1, 0, 1)
+outline_size = 3
+outline_color = Color(1, 0.53333336, 0.30980393, 1)
+
+[node name="HUD" type="Control" unique_id=2061466646]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e3vx7")
+
+[node name="ScoreBox" type="TextureRect" parent="." unique_id=1448523705]
+light_mask = 4
+visibility_layer = 4
+layout_mode = 0
+offset_left = 12.0
+offset_top = 14.0
+offset_right = 109.0
+offset_bottom = 56.0
+texture = ExtResource("2_7bqrl")
+
+[node name="SCORE" type="Label" parent="." unique_id=1609152310]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 22.0
+offset_right = 101.0
+offset_bottom = 50.0
+text = "SCORE: 3"
+label_settings = ExtResource("3_7bqrl")
+
+[node name="LifeBox" type="TextureRect" parent="." unique_id=1591593135]
+light_mask = 4
+layout_mode = 0
+offset_left = 204.0
+offset_top = 14.0
+offset_right = 246.0
+offset_bottom = 54.0
+texture = ExtResource("3_2ep1a")
+
+[node name="LIFE" type="Label" parent="." unique_id=381483457]
+layout_mode = 0
+offset_left = 217.0
+offset_top = 14.0
+offset_right = 232.0
+offset_bottom = 50.0
+text = "5"
+label_settings = SubResource("LabelSettings_2ep1a")
